@@ -1,0 +1,181 @@
+/* General tags */
+tag "Content" { 
+twitter.text any "NYSE, NASDAQ, DJIA, DJI, Dow, bearish, bear market, bullish, bull market, finance, financial news, financial market, SP500, ^GSPC, SPX, .INX,  stocks, wall street"
+OR
+twitter.text any "$ATVI, $ADBE, $ALTR, $AMZN, $APCC, $AMGN, $APOL, $AAPL, $AMAT, $ATYT, $ADSK, $BEAS, $BBBY, $BIIB, $BMET, $BRCM, $CDNS, $CDWC, $CELG, $CHRW, $CHKP, $CKFR, $CHIR, $CTAS, $CSCO, $CTXS, $CTSH, $CMCSA, $CMVT, $COST, $DELL, $XRAY, $DISCA, $EBAY, $DISH, $ERTS, $EXPE, $EXPD, $ESRX, $FAST, $FISV, $FLEX, $GRMN, $GENZ, $GILD, $GOOG, $IACI, $INTC, $INTU, $JDSU, $JNPR, $KLAC, $LRCX, $LAMR, $LBTYA, $LNCR, $LLTC, $ERICY, $MRVL, $MXIM, $MCIP, $MEDI, $MERQ, $MCHP, $MSFT, $MNST, $NTAP, $NIHD, $NVLS, $NTLI, $NVDA, $ORCL, $PCAR, $PDCO, $PTEN, $PAYX, $PETM, $PIXR, $QCOM, $RHAT, $RIMM, $ROST, $SNDK, $SHLD, $SEPR, $SEPR, $SIRI, $SPLS, $SBUX, $SUNW, $SYMC, $TLAB, $TEVA, $URBN, $VRSN, $WFMI, $WYNN, $XLNX, $XMSR, $YHOO, $MMM, $AA, $AXP, $BAC, $BA, $CAT, $CVX, $CSCO, $KO, $DD, $XOM, $GE, $HPQ, $HD, $INTC, $IBM, $JNJ, $JPM, $KFT, $MCD, $MRK, $MSFT, $PFE, $PG, $TRV, $UTX, $VZ, $WMT, $DIS"
+}
+tag "Link" {
+links.title any "NYSE, NASDAQ, DJIA, DJI, Dow, bearish, bear market, bullish, bull market, finance, financial news, financial market, SP500, ^GSPC, SPX, .INX,  stocks, wall street"
+OR
+links.title any "$ATVI, $ADBE, $ALTR, $AMZN, $APCC, $AMGN, $APOL, $AAPL, $AMAT, $ATYT, $ADSK, $BEAS, $BBBY, $BIIB, $BMET, $BRCM, $CDNS, $CDWC, $CELG, $CHRW, $CHKP, $CKFR, $CHIR, $CTAS, $CSCO, $CTXS, $CTSH, $CMCSA, $CMVT, $COST, $DELL, $XRAY, $DISCA, $EBAY, $DISH, $ERTS, $EXPE, $EXPD, $ESRX, $FAST, $FISV, $FLEX, $GRMN, $GENZ, $GILD, $GOOG, $IACI, $INTC, $INTU, $JDSU, $JNPR, $KLAC, $LRCX, $LAMR, $LBTYA, $LNCR, $LLTC, $ERICY, $MRVL, $MXIM, $MCIP, $MEDI, $MERQ, $MCHP, $MSFT, $MNST, $NTAP, $NIHD, $NVLS, $NTLI, $NVDA, $ORCL, $PCAR, $PDCO, $PTEN, $PAYX, $PETM, $PIXR, $QCOM, $RHAT, $RIMM, $ROST, $SNDK, $SHLD, $SEPR, $SEPR, $SIRI, $SPLS, $SBUX, $SUNW, $SYMC, $TLAB, $TEVA, $URBN, $VRSN, $WFMI, $WYNN, $XLNX, $XMSR, $YHOO, $MMM, $AA, $AXP, $BAC, $BA, $CAT, $CVX, $CSCO, $KO, $DD, $XOM, $GE, $HPQ, $HD, $INTC, $IBM, $JNJ, $JPM, $KFT, $MCD, $MRK, $MSFT, $PFE, $PG, $TRV, $UTX, $VZ, $WMT, $DIS"
+}
+tag "Keyword" { 
+interaction.content contains "$NYSE, NASDAQ, DJIA, DJI, Dow, bearish, bear market, bullish, bull market, finance, financial news, financial market, SP500, ^GSPC, SPX, .INX,  stocks, wall street"
+OR
+links.title any "NYSE, NASDAQ, DJIA, DJI, Dow, bearish, bear market, bullish, bull market, finance, financial news, financial market, SP500, ^GSPC, SPX, .INX,  stocks, wall street"
+}
+
+tag "ticker" {
+interaction.content any "$ATVI, $ADBE, $ALTR, $AMZN, $APCC, $AMGN, $APOL, $AAPL, $AMAT, $ATYT, $ADSK, $BEAS, $BBBY, $BIIB, $BMET, $BRCM, $CDNS, $CDWC, $CELG, $CHRW, $CHKP, $CKFR, $CHIR, $CTAS, $CSCO, $CTXS, $CTSH, $CMCSA, $CMVT, $COST, $DELL, $XRAY, $DISCA, $EBAY, $DISH, $ERTS, $EXPE, $EXPD, $ESRX, $FAST, $FISV, $FLEX, $GRMN, $GENZ, $GILD, $GOOG, $IACI, $INTC, $INTU, $JDSU, $JNPR, $KLAC, $LRCX, $LAMR, $LBTYA, $LNCR, $LLTC, $ERICY, $MRVL, $MXIM, $MCIP, $MEDI, $MERQ, $MCHP, $MSFT, $MNST, $NTAP, $NIHD, $NVLS, $NTLI, $NVDA, $ORCL, $PCAR, $PDCO, $PTEN, $PAYX, $PETM, $PIXR, $QCOM, $RHAT, $RIMM, $ROST, $SNDK, $SHLD, $SEPR, $SEPR, $SIRI, $SPLS, $SBUX, $SUNW, $SYMC, $TLAB, $TEVA, $URBN, $VRSN, $WFMI, $WYNN, $XLNX, $XMSR, $YHOO, $MMM, $AA, $AXP, $BAC, $BA, $CAT, $CVX, $CSCO, $KO, $DD, $XOM, $GE, $HPQ, $HD, $INTC, $IBM, $JNJ, $JPM, $KFT, $MCD, $MRK, $MSFT, $PFE, $PG, $TRV, $UTX, $VZ, $WMT, $DIS"
+OR
+links.title any "$ATVI, $ADBE, $ALTR, $AMZN, $APCC, $AMGN, $APOL, $AAPL, $AMAT, $ATYT, $ADSK, $BEAS, $BBBY, $BIIB, $BMET, $BRCM, $CDNS, $CDWC, $CELG, $CHRW, $CHKP, $CKFR, $CHIR, $CTAS, $CSCO, $CTXS, $CTSH, $CMCSA, $CMVT, $COST, $DELL, $XRAY, $DISCA, $EBAY, $DISH, $ERTS, $EXPE, $EXPD, $ESRX, $FAST, $FISV, $FLEX, $GRMN, $GENZ, $GILD, $GOOG, $IACI, $INTC, $INTU, $JDSU, $JNPR, $KLAC, $LRCX, $LAMR, $LBTYA, $LNCR, $LLTC, $ERICY, $MRVL, $MXIM, $MCIP, $MEDI, $MERQ, $MCHP, $MSFT, $MNST, $NTAP, $NIHD, $NVLS, $NTLI, $NVDA, $ORCL, $PCAR, $PDCO, $PTEN, $PAYX, $PETM, $PIXR, $QCOM, $RHAT, $RIMM, $ROST, $SNDK, $SHLD, $SEPR, $SEPR, $SIRI, $SPLS, $SBUX, $SUNW, $SYMC, $TLAB, $TEVA, $URBN, $VRSN, $WFMI, $WYNN, $XLNX, $XMSR, $YHOO, $MMM, $AA, $AXP, $BAC, $BA, $CAT, $CVX, $CSCO, $KO, $DD, $XOM, $GE, $HPQ, $HD, $INTC, $IBM, $JNJ, $JPM, $KFT, $MCD, $MRK, $MSFT, $PFE, $PG, $TRV, $UTX, $VZ, $WMT, $DIS"
+}
+
+/* Sentiment tags */
+tag "Neutral" { salience.content.sentiment == 0 }
+tag "Positive" { salience.content.sentiment > 0 }
+tag "Negative" { salience.content.sentiment < 0 }
+
+/* Cmpany name tags */
+tag "Activision Blizzard, Inc" { interaction.content contains "$ATVI"}
+tag "Adobe Systems Incorporated" { interaction.content contains "$ADBE"}
+tag "Akamai Technologies, Inc." { interaction.content contains "$AKAM"}
+tag "Alexion Pharmaceuticals, Inc." { interaction.content contains "$ALXN"}
+tag "Altera Corporation" { interaction.content contains "$ALTR"}
+tag "Amazon.com, Inc." { interaction.content contains "$AMZN"}
+tag "Amgen Inc." { interaction.content contains "$AMGN"}
+tag "Apollo Group, Inc." { interaction.content contains "$APOL"}
+tag "Apple Inc." { interaction.content contains "$AAPL"}
+tag "Applied Materials, Inc." { interaction.content contains "$AMAT"}
+tag "Autodesk, Inc." { interaction.content contains "$ADSK"}
+tag "Automatic Data Processing, Inc." { interaction.content contains "$ADP"}
+tag "Baidu, Inc." { interaction.content contains "$BIDU"}
+tag "Bed Bath & Beyond Inc." { interaction.content contains "$BBBY"}
+tag "Biogen Idec Inc" { interaction.content contains "$BIIB"}
+tag "BMC Software, Inc." { interaction.content contains "$BMC"}
+tag "Broadcom Corporation" { interaction.content contains "$BRCM"}
+tag "C.H. Robinson Worldwide, Inc." { interaction.content contains "$CHRW"}
+tag "CA Inc." { interaction.content contains "$CA"}
+tag "Celgene Corporation" { interaction.content contains "$CELG"}
+tag "Cerner Corporation" { interaction.content contains "$CERN"}
+tag "Check Point Software Technologies Ltd." { interaction.content contains "$CHKP"}
+tag "Cisco Systems, Inc." { interaction.content contains "$CSCO"}
+tag "Citrix Systems, Inc." { interaction.content contains "$CTXS"}
+tag "Cognizant Technology Solutions Corporation" { interaction.content contains "$CTSH"}
+tag "Comcast Corporation" { interaction.content contains "$CMCSA"}
+tag "Costco Wholesale Corporation" { interaction.content contains "$COST"}
+tag "Ctrip.com International, Ltd." { interaction.content contains "$CTRP"}
+tag "Dell Inc." { interaction.content contains "$DELL"}
+tag "DENTSPLY International Inc." { interaction.content contains "$XRAY"}
+tag "DIRECTV" { interaction.content contains "$DTV"}
+tag "Dollar Tree, Inc." { interaction.content contains "$DLTR"}
+tag "eBay Inc." { interaction.content contains "$EBAY"}
+tag "Electronic Arts Inc." { interaction.content contains "$ERTS"}
+tag "Expedia, Inc." { interaction.content contains "$EXPE"}
+tag "Expeditors International of Washington, Inc." { interaction.content contains "$EXPD"}
+tag "Express Scripts, Inc." { interaction.content contains "$ESRX"}
+tag "F5 Networks, Inc." { interaction.content contains "$FFIV"}
+tag "Fastenal Company" { interaction.content contains "$FAST"}
+tag "First Solar, Inc." { interaction.content contains "$FSLR"}
+tag "Fiserv, Inc." { interaction.content contains "$FISV"}
+tag "Flextronics International Ltd." { interaction.content contains "$FLEX"}
+tag "FLIR Systems, Inc." { interaction.content contains "$FLIR"}
+tag "Garmin Ltd." { interaction.content contains "$GRMN"}
+tag "Gilead Sciences, Inc." { interaction.content contains "$GILD"}
+tag "Google Inc." { interaction.content contains "$GOOG"}
+tag "Green Mountain Coffee Roasters, Inc." { interaction.content contains "$GMCR"}
+tag "Henry Schein, Inc." { interaction.content contains "$HSIC"}
+tag "Illumina, Inc." { interaction.content contains "$ILMN"}
+tag "Infosys Limited" { interaction.content contains "$INFY"}
+tag "Intel Corporation" { interaction.content contains "$INTC"}
+tag "Intuit Inc." { interaction.content contains "$INTU"}
+tag "Intuitive Surgical, Inc." { interaction.content contains "$ISRG"}
+tag "Joy Global Inc." { interaction.content contains "$JOYG"}
+tag "KLA-Tencor Corporation" { interaction.content contains "$KLAC"}
+tag "Lam Research Corporation" { interaction.content contains "$LRCX"}
+tag "Liberty Media Corporation" { interaction.content contains "$LINTA"}
+tag "Life Technologies Corporation" { interaction.content contains "$LIFE"}
+tag "Linear Technology Corporation" { interaction.content contains "$LLTC"}
+tag "Marvell Technology Group Ltd." { interaction.content contains "$MRVL"}
+tag "Mattel, Inc." { interaction.content contains "$MAT"}
+tag "Maxim Integrated Products, Inc." { interaction.content contains "$MXIM"}
+tag "Microchip Technology Incorporated" { interaction.content contains "$MCHP"}
+tag "Micron Technology, Inc." { interaction.content contains "$MU"}
+tag "Microsoft Corporation" { interaction.content contains "$MSFT"}
+tag "Mylan Inc." { interaction.content contains "$MYL"}
+tag "NetApp, Inc." { interaction.content contains "$NTAP"}
+tag "Netflix, Inc." { interaction.content contains "$NFLX"}
+tag "News Corporation" { interaction.content contains "$NWSA"}
+tag "NII Holdings, Inc." { interaction.content contains "$NIHD"}
+tag "NVIDIA Corporation" { interaction.content contains "$NVDA"}
+tag "O'Reilly Automotive, Inc." { interaction.content contains "$ORLY"}
+tag "Oracle Corporation" { interaction.content contains "$ORCL"}
+tag "PACCAR Inc." { interaction.content contains "$PCAR"}
+tag "Paychex, Inc." { interaction.content contains "$PAYX"}
+tag "priceline.com Incorporated" { interaction.content contains "$PCLN"}
+tag "Qiagen N.V." { interaction.content contains "$QGEN"}
+tag "QUALCOMM Incorporated" { interaction.content contains "$QCOM"}
+tag "Research in Motion Limited" { interaction.content contains "$RIMM"}
+tag "Ross Stores, Inc." { interaction.content contains "$ROST"}
+tag "SanDisk Corporation" { interaction.content contains "$SNDK"}
+tag "Seagate Technology." { interaction.content contains "$STX"}
+tag "Sears Holdings Corporation" { interaction.content contains "$SHLD"}
+tag "Sigma-Aldrich Corporation" { interaction.content contains "$SIAL"}
+tag "Sirius XM Radio Inc." { interaction.content contains "$SIRI"}
+tag "Staples, Inc." { interaction.content contains "$SPLS"}
+tag "Starbucks Corporation" { interaction.content contains "$SBUX"}
+tag "Stericycle, Inc." { interaction.content contains "$SRCL"}
+tag "Symantec Corporation" { interaction.content contains "$SYMC"}
+tag "Teva Pharmaceutical Industries Limited" { interaction.content contains "$TEVA"}
+tag "Urban Outfitters, Inc." { interaction.content contains "$URBN"}
+tag "VeriSign, Inc." { interaction.content contains "$VRSN"}
+tag "Vertex Pharmaceuticals Incorporated" { interaction.content contains "$VRTX"}
+tag "Virgin Media Inc." { interaction.content contains "$VMED"}
+tag "Vodafone Group Plc" { interaction.content contains "$VOD"}
+tag "Warner Chilcott plc" { interaction.content contains "$WCRX"}
+tag "Whole Foods Market, Inc." { interaction.content contains "$WFM"}
+tag "Wynn Resorts, Limited" { interaction.content contains "$WYNN"}
+tag "Xilinx, Inc." { interaction.content contains "$XLNX"}
+tag "Yahoo! Inc." { interaction.content contains "$YHOO"}
+tag "3M" { interaction.content contains "$MMM"}
+tag "Alcoa" { interaction.content contains "$AA"}
+tag "American Express" { interaction.content contains "$AXP"}
+tag "AT&T" { interaction.content contains "$T"}
+tag "Bank of America" { interaction.content contains "$BAC"}
+tag "Boeing" { interaction.content contains "$BA"}
+tag "Caterpillar" { interaction.content contains "$CAT"}
+tag "Chevron Corporation" { interaction.content contains "$CVX"}
+tag "Cisco Systems" { interaction.content contains "$CSCO"}
+tag "Coca-Cola" { interaction.content contains "$KO"}
+tag "DuPont" { interaction.content contains "$DD"}
+tag "ExxonMobil" { interaction.content contains "$XOM"}
+tag "General Electric" { interaction.content contains "$GE"}
+tag "Hewlett-Packard" { interaction.content contains "$HPQ"}
+tag "The Home Depot" { interaction.content contains "$HD"}
+tag "Intel" { interaction.content contains "$INTC"}
+tag "IBM" { interaction.content contains "$IBM"}
+tag "Johnson & Johnson" { interaction.content contains "$JNJ"}
+tag "JPMorgan Chase" { interaction.content contains "$JPM"}
+tag "Kraft Foods" { interaction.content contains "$KFT"}
+tag "McDonald's" { interaction.content contains "$MCD"}
+tag "Merck" { interaction.content contains "$MRK"}
+tag "Microsoft" { interaction.content contains "$MSFT"}
+tag "Pfizer" { interaction.content contains "$PFE"}
+tag "Procter & Gamble" { interaction.content contains "$PG"}
+tag "Travelers" { interaction.content contains "$TRV"}
+tag "United Technologies Corporation" { interaction.content contains "$UTX"}
+tag "Verizon Communications" { interaction.content contains "$VZ"}
+tag "Wal-Mart" { interaction.content contains "$WMT"}
+tag "Walt Disney" { interaction.content contains "$DIS"}
+
+
+
+return {
+twitter.text any "NYSE, NASDAQ, DJIA, DJI, Dow, bearish, bear market, bullish, bull market, finance, financial news, financial market, SP500, ^GSPC, SPX, .INX,  stocks, wall street"
+OR
+twitter.text any "$ATVI, $ADBE, $ALTR, $AMZN, $APCC, $AMGN, $APOL, $AAPL, $AMAT, $ATYT, $ADSK, $BEAS, $BBBY, $BIIB, $BMET, $BRCM, $CDNS, $CDWC, $CELG, $CHRW, $CHKP, $CKFR, $CHIR, $CTAS, $CSCO, $CTXS, $CTSH, $CMCSA, $CMVT, $COST, $DELL, $XRAY, $DISCA, $EBAY, $DISH, $ERTS, $EXPE, $EXPD, $ESRX, $FAST, $FISV, $FLEX, $GRMN, $GENZ, $GILD, $GOOG, $IACI, $INTC, $INTU, $JDSU, $JNPR, $KLAC, $LRCX, $LAMR, $LBTYA, $LNCR, $LLTC, $ERICY, $MRVL, $MXIM, $MCIP, $MEDI, $MERQ, $MCHP, $MSFT, $MNST, $NTAP, $NIHD, $NVLS, $NTLI, $NVDA, $ORCL, $PCAR, $PDCO, $PTEN, $PAYX, $PETM, $PIXR, $QCOM, $RHAT, $RIMM, $ROST, $SNDK, $SHLD, $SEPR, $SEPR, $SIRI, $SPLS, $SBUX, $SUNW, $SYMC, $TLAB, $TEVA, $URBN, $VRSN, $WFMI, $WYNN, $XLNX, $XMSR, $YHOO, $MMM, $AA, $AXP, $BAC, $BA, $CAT, $CVX, $CSCO, $KO, $DD, $XOM, $GE, $HPQ, $HD, $INTC, $IBM, $JNJ, $JPM, $KFT, $MCD, $MRK, $MSFT, $PFE, $PG, $TRV, $UTX, $VZ, $WMT, $DIS"
+OR
+links.title any "NYSE, NASDAQ, DJIA, DJI, Dow, bearish, bear market, bullish, bull market, finance, financial news, financial market, SP500, ^GSPC, SPX, .INX,  stocks, wall street"
+OR
+links.title any "$ATVI, $ADBE, $ALTR, $AMZN, $APCC, $AMGN, $APOL, $AAPL, $AMAT, $ATYT, $ADSK, $BEAS, $BBBY, $BIIB, $BMET, $BRCM, $CDNS, $CDWC, $CELG, $CHRW, $CHKP, $CKFR, $CHIR, $CTAS, $CSCO, $CTXS, $CTSH, $CMCSA, $CMVT, $COST, $DELL, $XRAY, $DISCA, $EBAY, $DISH, $ERTS, $EXPE, $EXPD, $ESRX, $FAST, $FISV, $FLEX, $GRMN, $GENZ, $GILD, $GOOG, $IACI, $INTC, $INTU, $JDSU, $JNPR, $KLAC, $LRCX, $LAMR, $LBTYA, $LNCR, $LLTC, $ERICY, $MRVL, $MXIM, $MCIP, $MEDI, $MERQ, $MCHP, $MSFT, $MNST, $NTAP, $NIHD, $NVLS, $NTLI, $NVDA, $ORCL, $PCAR, $PDCO, $PTEN, $PAYX, $PETM, $PIXR, $QCOM, $RHAT, $RIMM, $ROST, $SNDK, $SHLD, $SEPR, $SEPR, $SIRI, $SPLS, $SBUX, $SUNW, $SYMC, $TLAB, $TEVA, $URBN, $VRSN, $WFMI, $WYNN, $XLNX, $XMSR, $YHOO, $MMM, $AA, $AXP, $BAC, $BA, $CAT, $CVX, $CSCO, $KO, $DD, $XOM, $GE, $HPQ, $HD, $INTC, $IBM, $JNJ, $JPM, $KFT, $MCD, $MRK, $MSFT, $PFE, $PG, $TRV, $UTX, $VZ, $WMT, $DIS"
+OR
+links.domain any "wsj.com, bloomberg.com, BusinessWeek.com, ft.com, money.cnn.com, CNBC.com"
+OR
+twitter.domains any "wsj.com, bloomberg.com, BusinessWeek.com, ft.com, money.cnn.com, CNBC.com"
+OR
+twitter.retweet.domains any "wsj.com, bloomberg.com, BusinessWeek.com, ft.com, money.cnn.com, CNBC.com"
+OR
+twitter.mentions any "wsjusnews, wsjbreakingnews, wsjmarkets, WSJ,  bloombergnews, bloombergnow, bloomberg, BusinessWeek, Reuters_Buz, FinancialTimes, CNNMoney, CNBC"
+OR
+interaction.author.username any "wsjusnews, wsjbreakingnews, wsjmarkets, WSJ,  bloombergnews, bloombergnow, bloomberg, BusinessWeek, Reuters_Buz, FinancialTimes, CNNMoney, CNBC"
+}
