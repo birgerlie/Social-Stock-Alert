@@ -12,6 +12,7 @@ class EventHandler(datasift.StreamConsumerEventHandler):
     def on_connect(self, consumer):
         print 'Connected'
 	print ' '
+
     def on_interaction(self, consumer, interaction, hash):
 	print '.',
 	interaction['_id'] = interaction['interaction']['id']
@@ -21,7 +22,7 @@ class EventHandler(datasift.StreamConsumerEventHandler):
 
     def on_deleted(self, consumer, interaction, hash):
         sys.stdout.write('X')
-	print interaction
+	#print interaction
 
     def on_warning(self, consumer, message):
         print
@@ -35,9 +36,7 @@ class EventHandler(datasift.StreamConsumerEventHandler):
         print
         print 'Disconnected'
 
-
 dsl = open('stock.txt', 'r').read()
-
 usr = datasift.User(config.username, config.api_key)
 
 definition = usr.create_definition(dsl)
