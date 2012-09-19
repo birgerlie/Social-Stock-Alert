@@ -56,6 +56,6 @@ class TwitterStats:
 #4925 7858 3087 0218   /    02/13   / 0218    989		
 #loop over each time delta and calculate the averages and store them
 stat = TwitterStats()
-stat.build_stats(datetime(2012,7,28))
+stat.build_stats(datetime(2012,8,28))
 #print [[ticker['dv'],ticker['v']]  for ticker in stat.ticker_stats(datetime(2012,7,28),datetime(2012,7,29), 'AMZN')]
 
