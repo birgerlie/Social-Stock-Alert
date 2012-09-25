@@ -18,42 +18,43 @@ class TimeSeriesRecorder:
  def onSample(self,event, count, ts = datetime.now()):
   sample = {"$inc":{"count":count},"$set":{'event':event}}
   for m in self.metric:
-   
    key_ts=  self.metric[m](event,ts)
    sample['$set']['ts']= key_ts[1]	
    dbname ='_'.join([self.name,m])
    self.db[dbname].update({'_id': key_ts[0]}, sample, True)  		
 
  def month_key(self, event, ts):
-  return (":".join([event,self.year(),self.month()]), datetime(ts.year,ts.month,1)) 
+  return (":".join([event,self.year(ts),self.month(ts)]), datetime(ts.year,ts.month,1)) 
 
  def week_key(self,event,ts):
-  print event
-  r =  ":".join([event,self.year(),self.week()]),ts.isocalendar()
-  print r  
-  return r
+  return ":".join([event,self.year(ts),self.week(ts)]),ts.isocalendar()
  
  def day_key(self,event, ts):
-  return ":".join([event,self.year(),self.month(),self.day()]),datetime(ts.year,ts.month,ts.day) 
+  return ":".join([event,self.year(ts),self.month(ts),self.day(ts)]),datetime(ts.year,ts.month,ts.day) 
  
  def hour_key(self,event,ts):
-  return ":".join([event,self.year(),self.month(),self.day(),self.hour()]), datetime(ts.year,ts.month,ts.day,ts.hour) 
+  return ":".join([event,self.year(ts),self.month(ts),self.day(ts),self.hour(ts)]), datetime(ts.year,ts.month,ts.day,ts.hour) 
 
- def week(self): 
-  return str(datetime.now().isocalendar()[1])  
- def year(self):
-  return str(datetime.now().year)
- def month(self):
-  return str(datetime.now().month)
- def day(self):
-  return str(datetime.now().day)
- def hour(self):
-  return str(datetime.now().hour)
+ def week(self, ts): 
+  return str(ts.isocalendar()[1])  
+ def year(self,ts):
+  return str(ts.year)
+ def month(self,ts):
+  return str(ts.month)
+ def day(self, ts):
+  return str(ts.day)
+ def hour(self,ts):
+  return str(ts.hour)
 
-
-
+ def update_old_tweets(self):
+  ts = datetime.now()
+  for tweet in self.db.tweets.find({'time_stamp':{'$lt':ts}}):	
+   for ticker in tweet['tickers']:
+     self.onSample(ticker,1, tweet['time_stamp'])   	
+     print '.',
 
 if __name__ == "__main__":
   ts = TimeSeriesRecorder('test')
   ts.onSample('goog',1)
-		
+  ts.update_old_tweets()		
+
