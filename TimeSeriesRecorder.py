@@ -54,7 +54,6 @@ class TimeSeriesRecorder:
      print '.',
 
 if __name__ == "__main__":
-  ts = TimeSeriesRecorder('test')
-  ts.onSample('goog',1)
+  ts = TimeSeriesRecorder('twitter_volume')
   ts.update_old_tweets()		
 

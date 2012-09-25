@@ -7,7 +7,7 @@ class EventHandler(datasift.StreamConsumerEventHandler):
   self.db = Connection(config.db_host, config.db_port).production
   self.exp = re.compile('\\$[A-Z]+')
   print TimeSeriesRecorder
-  self.timeseries = TimeSeriesRecorder('tweet_ts') 
+  self.timeseries = TimeSeriesRecorder('twitter_volume') 
      
  def on_connect(self, consumer):
   print 'Connected'
@@ -18,10 +18,10 @@ class EventHandler(datasift.StreamConsumerEventHandler):
   interaction['_id'] = interaction['interaction']['id']
   interaction['time_stamp'] = datetime.datetime.now()
   interaction['tickers'] = [ticker[1:] for ticker in self.exp.findall(interaction['interaction']['content'])] 
-  print self.timeseries
-  for ticker in interaction['tickers']:
-	 self.timeseries.onSample(ticker,interaction['time_stamp'])
   self.db.tweets.save(interaction)
+  for ticker in interaction['tickers']:
+    self.timeseries.onSample(ticker,interaction['time_stamp'])
+ 
  def on_deleted(self, consumer, interaction, hash):
   sys.stdout.write('X')
 
