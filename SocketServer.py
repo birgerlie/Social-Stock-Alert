@@ -7,6 +7,9 @@ import tornado.ioloop
 import tornado.web
 import re
 import config
+from TimeSeriesRecorder import TimeSeriesRecorder	 
+from datetime import datetime
+
 
 class WSHandler(tornado.websocket.WebSocketHandler):
     def open(self):
@@ -24,7 +27,9 @@ class TwitterHandler(tornado.web.RequestHandler):
  def get(self):
   data = {'ticker':'$MSFT'}
   ticker = self.get_argument('ticker', default='GOOG', strip=True)	
-  self.write(ticker)
+  n = datetime.now()
+  data = twitter_data.fetch_ts(ticker.upper(),datime(n.year,n.month,n.day -14), n)
+  self.write(data)
 
  def load_twitter_volume(self,ticker):
    
@@ -35,6 +40,7 @@ application = tornado.web.Application([
     (r'/', TwitterHandler)
 ])
 
+twitter_data = TimeSeriesRecorder('twitter_volume')
 db = Connection(config.db_host, config.db_port).production
 
 if __name__ == "__main__":
