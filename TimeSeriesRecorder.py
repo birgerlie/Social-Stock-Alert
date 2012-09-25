@@ -3,7 +3,8 @@ import pymongo,config,datetime, re
 from pymongo import Connection, ASCENDING
 from datetime import datetime, timedelta
 
-class TimeSeries: 
+
+class TimeSeriesRecorder: 
  def __init__(self,name ):
   self.db = Connection(config.db_host, config.db_port).production
   self.name = name
@@ -53,6 +54,6 @@ class TimeSeries:
 
 
 if __name__ == "__main__":
-  ts = TimeSeries('test')
+  ts = TimeSeriesRecorder('test')
   ts.onSample('goog',1)
 		
