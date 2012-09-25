@@ -16,7 +16,7 @@ class TimeSeriesRecorder:
   
 	
  def onSample(self,event, count, ts = datetime.now()):
-  sample = {"$inc":{"count":count},"$set":{'event':event}}
+  sample = {"$inc":{"count":1,'sum':count} ,"$set":{'event':event}}
   for m in self.metric:
    key_ts=  self.metric[m](event,ts)
    sample['$set']['ts']= key_ts[1]	
@@ -36,13 +36,17 @@ class TimeSeriesRecorder:
   return ":".join([event,self.year(ts),self.month(ts),self.day(ts),self.hour(ts)]), datetime(ts.year,ts.month,ts.day,ts.hour) 
 
  def week(self, ts): 
-  return str(ts.isocalendar()[1])  
+  return str(ts.isocalendar()[1]) 
+ 
  def year(self,ts):
   return str(ts.year)
+
  def month(self,ts):
   return str(ts.month)
+
  def day(self, ts):
   return str(ts.day)
+
  def hour(self,ts):
   return str(ts.hour)
 
@@ -52,8 +56,15 @@ class TimeSeriesRecorder:
    for ticker in tweet['tickers']:
      self.onSample(ticker,1, tweet['time_stamp'])   	
      print '.',
+ 
+ def fetch_ts(self, event, start, end , metric='hour'):
+  return list( self.db[self.dbname(metric)].find({'event':event,'ts':{'$gt':start, "$lte":end}}, ['count','sum'] ))
+    
+   	
+ def dbname(self,metric):
+  return '_'.join([self.name,metric])
 
 if __name__ == "__main__":
   ts = TimeSeriesRecorder('twitter_volume')
-  ts.update_old_tweets()		
-
+  #ts.update_old_tweets()		
+  print ts.fetch_ts('AAPL', datetime(2011,7,27), datetime(2012,7,29))
