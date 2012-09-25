@@ -7,21 +7,18 @@ class TimeSeries:
  def __init__(self,name ):
   self.db = Connection(config.db_host, config.db_port).production
   self.name = name
-  self.metric = ['month', 'week','day','hour']	
-  	  
+  self.metric = {'month':self.month_key,'week':self.week_key,'day':self.day_key,'hour':self.hour_key } 	  
 
   for resolution in self.metric: 	
    self.db['_'.join([self.name,resolution])].ensure_index( [('event', ASCENDING), ('ts', ASCENDING)] )  
    	
-  self.key = {'month':self.month_key,'week':self.week_key,'day':self.day_key,'hour':self.hour_key }  
   
 	
  def onSample(self,event, count, ts = datetime.now()):
   sample = {"$inc":{"count":count},"$set":{'event':event}}
   for m in self.metric:
    
-   func =  self.key[m]
-   key_ts = func(event,ts)
+   key_ts=  self.metric[m](event,ts)
    sample['$set']['ts']= key_ts[1]	
    dbname ='_'.join([self.name,m])
    self.db[dbname].update({'_id': key_ts[0]}, sample, True)  		
