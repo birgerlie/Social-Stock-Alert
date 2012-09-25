@@ -1,5 +1,6 @@
 import pymongo,config,datetime, re
 from pymongo import Connection
+import json
 from datetime import datetime, timedelta
 import tornado.httpserver
 import tornado.websocket
@@ -28,13 +29,10 @@ class TwitterHandler(tornado.web.RequestHandler):
   data = {'ticker':'$MSFT'}
   ticker = self.get_argument('ticker', default='GOOG', strip=True)	
   n = datetime.now()
-  data = twitter_data.fetch_ts(ticker.upper(),datime(n.year,n.month,n.day -14), n)
-  self.write(data)
+  data = twitter_data.fetch_ts(ticker.upper(),datetime(n.year,n.month,n.day -14), n)
+  self.write(json.dumps( data))
 
- def load_twitter_volume(self,ticker):
-   
 
-tickers = [ticker[1:] for ticker in re.compile('\\$[A-Z]+').findall(open('stock.txt', 'r').read())]
 application = tornado.web.Application([
     (r'/ws', WSHandler),
     (r'/', TwitterHandler)
@@ -45,6 +43,6 @@ db = Connection(config.db_host, config.db_port).production
 
 if __name__ == "__main__":
     http_server = tornado.httpserver.HTTPServer(application)
-    http_server.listen(8888)
+    http_server.listen(8889)
     tornado.ioloop.IOLoop.instance().start()
 
