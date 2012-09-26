@@ -22,8 +22,10 @@ class StockCollector:
     data['ticker'] = ticker
     data['time_stamp'] = datetime.datetime.now()   
     self.save_stock_data(data)
-    self.ts_volume.onSample(ticker, int( data['volume']))
-    self.ts_price.onSample(ticker,float(data['price']))
+	
+    if data['volume'].isdigit() and data['price'].isdigit():    
+     self.ts_volume.onSample(ticker, int( data['volume']))
+     self.ts_price.onSample(ticker,float(data['price']))
     print('.'),
    print ''
    time.sleep(60)
