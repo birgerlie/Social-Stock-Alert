@@ -12,24 +12,24 @@ class StockCollector:
   self.db = Connection('localhost',27017).production
   self.ts_volume = TimeSeriesRecorder('stock_volume')
   self.ts_price = TimeSeriesRecorder('stock_price')
+
  def fetch_stock_data(self):
   times = 1
+
   while times == 1:
    for ticker in self.stocks:
     data = ystockquote.get_all(ticker)
     data['ticker'] = ticker
     data['time_stamp'] = datetime.datetime.now()   
     self.save_stock_data(data)
-   # print ticker, data['volume'], data['time_stamp']		    
-    self.ts_volume.onSample(ticker,data['volume'],data['time_stamp'])
-    self.ts_price.onSample(ticker,data['price'],data['time_stamp'])
+    self.ts_volume.onSample(ticker, int( data['volume']))
+    self.ts_price.onSample(ticker,float(data['price']))
     print('.'),
    print ''
    time.sleep(60)
  
  def save_stock_data(self, data):
   self.db.stocks.save(data)
-  #print data	 
 
 
 collector =  StockCollector()

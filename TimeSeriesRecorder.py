@@ -21,7 +21,6 @@ class TimeSeriesRecorder:
    key_ts=  self.metric[m](event,ts)
    sample['$set']['ts']= key_ts[1]	
    dbname ='_'.join([self.name,m])
-   print sample
    self.db[dbname].update({'_id': key_ts[0]}, sample, True)  		
 
  def month_key(self, event, ts):
@@ -67,5 +66,6 @@ class TimeSeriesRecorder:
 
 if __name__ == "__main__":
   ts = TimeSeriesRecorder('twitter_volume')
-  ts.update_old_tweets()		
+  ts.onSample('GOOG',300)
+  #ts.update_old_tweets()		
   #print ts.fetch_ts('AAPL', datetime(2011,7,27), datetime(2012,7,29))
