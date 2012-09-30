@@ -29,7 +29,7 @@ class TwitterHandler(tornado.web.RequestHandler):
   data = {'ticker':'$MSFT'}
   ticker = self.get_argument('ticker', default='GOOG', strip=True)	
   n = datetime.now()
-  data = twitter_data.fetch_ts(ticker.upper(),datetime(n.year,n.month,n.day -14), n)
+  data = twitter_data.fetch_ts(ticker.upper(),datetime(n.year -1,n.month,n.day -14), n)
   self.set_header("Content-Type", "application/json; charset=UTF-8")
   self.write(json.dumps( data))
 
